@@ -8,6 +8,13 @@ A small FastAPI backend + HTML/JS frontend to track FPGA/ASIC regression **runs*
 
 ---
 
+## Tech Stack
+
+- **Backend:** FastAPI, Pydantic, SQLAlchemy ORM, SQLite
+- **Frontend:** HTML/CSS/JavaScript
+
+---
+
 ## Repository Structure
 
 ```
@@ -44,12 +51,7 @@ A small FastAPI backend + HTML/JS frontend to track FPGA/ASIC regression **runs*
 
 ---
 
-## Tech Stack
 
-- **Backend:** FastAPI, Pydantic, SQLAlchemy ORM, SQLite
-- **Frontend:** HTML/CSS/JavaScript
-
----
 
 ## Setup (Windows, PowerShell)
 
