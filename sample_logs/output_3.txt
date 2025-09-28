@@ -1,0 +1,8 @@
+
+
+TEST tb_vga_timing_640x480 ... PASS duration=10ms
+TEST tb_button_debounce ... FAIL duration=1ms msg="glitch detected"
+TEST tb_pwm_duty ... PASS duration=3ms
+TEST tb_i2c_slave_addr ... PASS
+TEST tb_i2c_master_addr ... FAIL duration=2ms msg="lost arbitration"
+[tool] done

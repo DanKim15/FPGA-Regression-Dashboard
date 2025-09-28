@@ -35,10 +35,18 @@ async function showRunDetails(runId) {
   const run = await res.json();
   document.getElementById('runMeta').textContent =
     `Run #${run.id} — ${run.name} — ${run.passed}/${run.total_tests} passed — status: ${run.status}`;
+  drawTests(run);
+  updateFilter(run);
 
-  const tbody = document.getElementById('testsBody');
+  const runIdInput = document.getElementById('runId');
+  if (runIdInput) runIdInput.value = run.id;
+}
+function drawTests(run) {
+  const filter = document.getElementById("testFilter").value;
+  const tbody = document.getElementById("testsBody");
   tbody.innerHTML = '';
-  (run.tests || []).forEach(t => {
+  const tests = (run.tests || []).filter(t => filter === 'ALL' ? true : t.status === filter);
+  (tests || []).forEach(t => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${escapeHtml(t.name)}</td>
@@ -48,9 +56,12 @@ async function showRunDetails(runId) {
     `;
     tbody.appendChild(tr);
   });
+}
 
-  const runIdInput = document.getElementById('runId');
-  if (runIdInput) runIdInput.value = run.id;
+function updateFilter(run) {
+  const selector = document.getElementById('testFilter');
+  if (!selector) return;
+  selector.onchange = () => drawTests(run);
 }
 
 document.getElementById('createRunForm').addEventListener('submit', async (e) => {

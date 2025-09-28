@@ -55,6 +55,14 @@
   <section class="detail">
     <h2>Run Details</h2>
     <div id="runMeta" class="muted">Select a run to view its tests.</div>
+    <div style="margin:8px 0;">
+      <label for="testFilter">Filter:</label>
+      <select id="testFilter">
+        <option value="ALL">All</option>
+        <option value="PASS">Pass</option>
+        <option value="FAIL">Fail</option>
+      </select>
+    </div>
     <table>
       <thead>
         <tr>

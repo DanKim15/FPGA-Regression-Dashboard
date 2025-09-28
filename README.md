@@ -111,5 +111,5 @@ TEST <name> ... FAIL duration=3ms
 
 ## TODO
 
-- Filters: (PASS/FAIL), search, sort by duration or name
+- Filters: Search, sort by duration or name
 - Parse other log formats such as UVM summaries
