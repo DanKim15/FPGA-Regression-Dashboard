@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPGA Regression Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>FPGA Regression Dashboard</h1>
+    <p>Simple viewer for regression runs (API must be running at <code>http://127.0.0.1:8000</code>).</p>
+  </header>
+
+  <section class="new-run">
+    <h2>Create a Run</h2>
+    <form id="createRunForm">
+      <input type="text" id="name" placeholder="Run name" required />
+      <input type="text" id="branch" placeholder="Branch (optional)" />
+      <input type="text" id="commit" placeholder="Commit SHA (optional)" />
+      <button type="submit">Create</button>
+    </form>
+  </section>
+
+  <section class="upload">
+    <h2>Upload Log to a Run</h2>
+    <form id="uploadForm">
+      <input type="number" id="runId" placeholder="Run ID" required />
+      <input type="file" id="logFile" accept=".txt,.log" required />
+      <button type="submit">Upload</button>
+    </form>
+  </section>
+
+  <section class="runs">
+    <h2>Runs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>Passed</th>
+          <th>Failed</th>
+          <th>Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="runsBody"></tbody>
+    </table>
+  </section>
+
+  <section class="detail">
+    <h2>Run Details</h2>
+    <div id="runMeta" class="muted">Select a run to view its tests.</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          <th>Status</th>
+          <th>Duration (ms)</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody id="testsBody"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
