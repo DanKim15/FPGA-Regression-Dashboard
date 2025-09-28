@@ -1,6 +1,6 @@
 # FPGA Regression Dashboard
 
-A small FastAPI backend + HTML/JS frontend to track FPGA/ASIC regression **runs** and per-test **results**. Create a run, upload a simulator log, and view pass/fail breakdowns in your browser.
+A small FastAPI backend + HTML/JS frontend to track FPGA/ASIC regression **runs** and per-test results. Create a run, upload a simulator log, and view pass/fail breakdowns in your browser.
 
 ---
 
