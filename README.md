@@ -4,7 +4,7 @@ A small FastAPI backend + HTML/JS frontend to track FPGA/ASIC regression **runs*
 
 ---
 
-![App Screenshot](docs/screenshot.png)
+![App Screenshot](https://github.com/DanKim15/FPGA-Regression-Dashboard/blob/main/dashboard_screenshot.png)
 
 ---
 
@@ -103,12 +103,11 @@ TEST <name> ... FAIL duration=3ms
 
 - Duration is optional (defaults to 0).  
 - Non-matching lines are ignored.  
-- TODO: Extend `app/parser.py` to support additional formats (e.g., UVM summaries).
 
 ---
 
 
 ## TODO
 
-- Filters (PASS/FAIL), search, sort by duration
-- Parse other log formats
+- Filters: (PASS/FAIL), search, sort by duration or name
+- Parse other log formats such as UVM summaries
