@@ -64,10 +64,8 @@ async def upload_log(run_id: int, file: UploadFile = File(...), db: Session = De
     db.commit()
 
     parsed = parser.parse_log(content)
-    # Clear previous tests
     db.query(models.TestResult).filter(
         models.TestResult.run_id == run_id).delete()
-    # Insert new tests
     for t in parsed['tests']:
         db.add(models.TestResult(run_id=run_id, **t))
 
